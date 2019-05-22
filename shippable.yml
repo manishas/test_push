@@ -111,6 +111,8 @@ pipelines:
         requires:
           resources:
             - in_art_file
+          steps:
+            - file_push_to_art_without_resources
           integrations:
             - art
       - name: file_push_to_art_with_in_and_out_resource
@@ -123,6 +125,8 @@ pipelines:
         requires:
           resources:
             - in_art_file
+          steps:
+            - file_push_to_art_with_in_resource             
         outputResources:
           - out_art_file
   #     - name: file_push_to_s3_with_in_and_out_resource
