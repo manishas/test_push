@@ -36,14 +36,14 @@ resources:
   #   configuration:
   #     integrationName: aws
 
-  - name: in_rt_file
+  - name: in_art_file
     type: file
     fileLocation: manisha_generic
     fileName: nvm.sh
     configuration:
       integrationName: art
 
-  - name: out_rt_file
+  - name: out_art_file
     type: file
     fileLocation: manisha_generic
     fileName: nvm.sh
@@ -110,7 +110,7 @@ pipelines:
               outputFileName: nvm.sh
         requires:
           resources:
-            - in_rt_file
+            - in_art_file
           integrations:
             - art
       - name: file_push_to_art_with_in_and_out_resource
@@ -122,9 +122,9 @@ pipelines:
               outputFileName: nvm.sh
         requires:
           resources:
-            - in_rt_file
+            - in_art_file
         outputResources:
-          - out_rt_file
+          - out_art_file
   #     - name: file_push_to_s3_with_in_and_out_resource
   #       type: push
   #       payloadType: file
